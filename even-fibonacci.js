@@ -9,3 +9,12 @@ for(num=1; num <=60; num++) {
     var1=var2;
     var2=var3;
 };
+
+console.log(evenFibonacci);
+
+var sumFib = 0;
+
+for(num = 11; num = evenFibonacci.length; num--) {
+    sumFib = sumFib + evenFibonacci.pop();
+    console.log(sumFib);
+};
