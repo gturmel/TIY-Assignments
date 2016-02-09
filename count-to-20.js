@@ -7,3 +7,18 @@ for(num = 0; num <= 20; num++) {
         console.log(num + " is even")
     };
 };
+
+
+
+
+function verbing(input) {
+    if (input.length > 2 && input.str.includes("ing")) {
+        console.log("input" + "ly")
+    } else if (input.length > 2 ){
+        console.log("input" + "ing")
+    } else {
+        console.log("input")
+    };
+    };
+
+    verbing("derp")
