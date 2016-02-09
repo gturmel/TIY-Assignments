@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>About Me</title>
+</head>
+<body>
+  <h1>About Me</h1>
+
+  <ul>
+    <li>Full Name: <span id="fullname"></span></li>
+    <li>Hometown: <span id="hometown"></span></li>
+    <li>Favorite Movie: <span id="movie"></span></li>
+    <li>Favorite Food: <span id="food"></span></li>
+  </ul>
+
+ </body>
+</html>
