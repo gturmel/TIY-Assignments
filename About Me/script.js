@@ -35,7 +35,7 @@ for(num = 0; num <= list.length; num++ )
 
 
 var myImg = new Image();
-myImg.src = "About Me/myImg.jpg";
+myImg.src = "myImg.jpg";
 console.log(myImg);
 body.appendChild(myImg);
 
