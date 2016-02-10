@@ -5,6 +5,10 @@
 //span replaced by my own information
       var personalInfo = ["Greg Turmel", "Elizabeth City, NC", "Children of Men", "Sandwiches"]
 
+// while (num <= personalInfo.length) {
+//    document.getElementsByTagName("span").textContent = personalInfo.shift();
+// };
+
       var spanName = document.getElementById("fullname");
       spanName.textContent = personalInfo.shift();
 
@@ -34,6 +38,8 @@ var myImg = new Image();
 myImg.src = "About Me/myImg.jpg";
 console.log(myImg);
 body.appendChild(myImg);
+
+
 
 // var img1 = new Image(); // HTML5 Constructor
 // img1.src = 'image1.png';
