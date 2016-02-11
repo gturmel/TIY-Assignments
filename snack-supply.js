@@ -22,3 +22,20 @@ function calculateSupply (age, amountPerDay) {
 console.log("You will need " + totalAmount + " M&M's to last you until the ripe old age of " + totalAge + ".");
 
 console.log(calculateSupply(1, 2));
+
+
+//the right answer
+
+function calculateSupply(age, numPerDay) {
+   var maxAge = 100;
+   var totalNeeded = (numPerday * 365) * (maxAge - age);
+   var message = "You will need " + totalNeeded + " cups of tea to last you until the ripe old age of " + maxAge;
+   console.log(message);
+}
+
+calculateSupply(28, 36);
+
+
+// or
+
+function calculateSupply(age)
