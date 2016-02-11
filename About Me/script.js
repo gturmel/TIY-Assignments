@@ -27,11 +27,12 @@
 
 var list = document.getElementsByTagName("li");
 
+
 for(num = 0; num <= list.length; num++ )
-      {
+   {
          list[num].className = "listItem";
          list[num].style.color = "red";
-      };
+   };
 
 
 var myImg = new Image();
