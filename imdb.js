@@ -16,3 +16,22 @@ function printMovie () {
 };
 
 printMovie(movie);
+
+movie.stars.join(", ") will iterate through the array, concatenating them!!!
+
+//this is what's going on, for what's up.
+var movie = {
+    title: "The Dark Knight",
+    duration: 152,
+    stars: [
+        "The Batman",
+        "The Joker",
+        "The Police Dude",
+        "The Other Guy"]
+};
+
+function printMovie () {
+    console.log(movie.title + " lasts for " + movie.duration + " minutes.  Stars " + movie.stars.join(", "))
+};
+
+printMovie(movie);
