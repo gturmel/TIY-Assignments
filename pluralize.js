@@ -7,7 +7,7 @@
 
 
 function pluralize (noun, number){
-    if (number !== 1){
+    if (if typeof noun === "string" && typeof number === number && number !== 1){
      console.log(number + " " + noun + "s.");
     }
     else if (){
