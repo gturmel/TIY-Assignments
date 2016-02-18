@@ -4,8 +4,8 @@
 // default to returning english.
 // call that function for each supported lang, log result
 
-function helloWorld (i){
-    if(i = "es") {
+function helloWorld (lang){
+    if(lang === "es") {
         console.log("Hola, Mundo");
     }
     else {
