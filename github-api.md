@@ -70,18 +70,85 @@ The API handles authentication three different ways. These three ways will be to
 
 * the profile data for a user?
 
-   * 
+   * From what I understand (and this could be pretty far off), an endpoint is what we get from the API after asking AJAX to `GET` a particular piece of data. The endpoints that we get from requesting profile data are everything from User Name, to date they joined, to company they work for, to if they're hireable or not. The complete list can be found [here](https://developer.github.com/v3/users/#get-a-single-user).
 
 
 * the organizations a user belongs to?
+
+   * This returns a much smaller list than the complete profile information. This list includes all of the Public memberships of a user. This is also regardless of authentication. The detailed list can be found [here](https://developer.github.com/v3/orgs/#list-user-organizations).
+
+
 * the repositories a user has created?
+
+   * This will return an array of objects, with each object being a separate repo. This goes up to 100 repos, which is a lot. The data returned in each object is manifold. Each object has another object nested inside of it with the user's information. The rest of the object contains information about the repo, like stars, forks, and date created.
+
+
 * a filtered list of repositories?
+
+   * This is going to depend on the filters. Right up at the top of [this](https://developer.github.com/v3/repos/#list-user-repositories) page there's a list of different filters that we can apply to hunt for different things. The repositories will be returned to us as the traditional array of objects, but ordered by the parameters that we've passed into the search function.
+
+
 * a sorted list of repositories?
+
+   * This starts with `sort`, and a type `string` that can be `stars`, `forks`, or `updated`. The default is that results are sorted by best match.
+
+
 * public events for a user?
+
+   * This has two different directions. There are public events that a user has received, and it's accessed by using `GET /users/:username/received_events/public`. Then there's public events that a user has performed, found at `GET /users/:username/events/public`.
+
+
 ## When fetching public events for a user...
+
+
 * How many results are returned by default?
+
+   * 100 or 30 per page. Either way, that's a lot. It can get unwieldy really quickly. Why the different number? You get 100 results when you query the GibHub Search API, and 30 results when you call GitHub's public repositories. You can also limit the results, but the max of 100 on a page. You can navigate around to different pages by changing the page number at the very end of the link.  <https://api.github.com/search/code?q=addClass+user%3Amozilla&page=2>
+
+
+
 * What limitations exist on fetching more results?
+
+   * Fetching up to 10 pages of 30 results is supported, after that, GitHub is like: Go home, you don't need more information. Also, only events created in the last 90 days will be included, even if that leaves the number less than 300.
+
 * What is the basic structure of the results?
+
+   * It also creates an array, with several objects within it. There's some basic information about the Repo, the Owner, and the Organization that the Owner belongs to.
+
 * What fields are included in each result?
+
+   * "type": "Event",
+    "public": true,
+    "payload": {
+    },
+    "repo": {
+      "id": 3,
+      "name": "octocat/Hello-World",
+      "url": "https://api.github.com/repos/octocat/Hello-World"
+    },
+    "actor": {
+      "id": 1,
+      "login": "octocat",
+      "gravatar_id": "",
+      "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+      "url": "https://api.github.com/users/octocat"
+    },
+    "org": {
+      "id": 1,
+      "login": "github",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/github",
+      "avatar_url": "https://github.com/images/error/octocat_happy.gif"
+    },
+    "created_at": "2011-09-06T17:26:27Z",
+    "id": "12345"
+
+
 * What are the data types for each field?
+
+   * Mostly strings, with some numbers scattered throughout. There's also a time value for `created_at`.
+
+
 * What are some of the different values for the type field?
+
+   * Kelly and Jasmine, I'm sorry, but I"m tired. I'll come back to this later, but I can't seem to find it, and I needed to get more work done today. I also didn't save this last night, and I had at least the first few sections knocked out, which is why I accidentally attached it to the Homework Submission Form yesterday.
