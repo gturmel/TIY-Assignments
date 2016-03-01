@@ -1,0 +1,17 @@
+.container {
+  width: 100%; }
+
+.column {
+  background: #1abc9c;
+  height: 200px;
+  display: block;
+  float: left;
+  width: 20%/columns-30%; }
+
+.col-4 {
+  width: 25%; }
+
+.a {
+  color: red; }
+
+/*# sourceMappingURL=test.css.map */
