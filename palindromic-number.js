@@ -1,44 +1,23 @@
-// largest palindromic number made from the product of two three digit numbers
+// A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
-// goals: work through all three digit number product combos
-// check if the number is a palindrome.
-// if so, push to an array.
-// sort the array
-// get the highest value// largest palindromic number made from the product of two three digit numbers
+// Find the largest palindrome made from the product of two 3-digit numbers.
 
-// goals: work through all three digit number product combos
-// check if the number is a palindrome.
-// if so, push to an array.
-// sort the array
-// get the highest value
+var arr = [];
+var arr2 = [];
+var product;
+var product2;
 
-// var firstNum = 100;
-var secondNum = 100;
-var palinCheck = [];
-var palindromeArr = [];
-// var product;
-
-// for(var i = 0; i <= 10; i++){
-//     product = firstNum * secondNum;
-//     product.toString();
-//     palinCheck.push(product);
-//     palinCheck.split('');
-//     console.log(palinCheck);
-//     // if(product === palinCheck[0]){
-//     //     palindromeArr.push(product);
-//     //     palindromeArr.sort();
-//     //     console.log(palindromeArr);
-//     }
-//     firstNum++;
-// };
-
-
-for(firstNum = 100; firstNum <1000; firstNum++){
-    product = firstNum * secondNum;
-    var rabble = product.toString();
-    rabble2 = rabble.split('').reverse().join('')
-
-    if(rabble === rabble2){
-        console.log(rabble + ' is a palindrome');
-    }
-}
+for(var num = 100; num < 1000; num++){
+	for(var i = 100; i < 1000; i++){
+		product = num * i;
+		product2 = product.toString().split("").reverse().join("");
+		// console.log(product2 + 'prod2');
+		product = product.toString();
+		// console.log(product + "prod");
+		if(product === product2){
+			arr.unshift(product);
+		};
+	};
+};
+arr.sort(function(a,b){return b-a});
+console.log(arr[0]);
